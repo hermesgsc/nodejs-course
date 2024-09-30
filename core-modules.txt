@@ -1,0 +1,5 @@
+http -> launch a server, send request
+https -> launch a ssl server
+fs -> 
+path -> 
+os ->

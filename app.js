@@ -1,4 +1,11 @@
 const http = require("http");
+const express = require("express");
+const app = express();
 
-const server = http.createServer();
+app.use((req, res, next) => {
+  console.log("middleware here");
+  next();
+});
+
+const server = http.createServer(app);
 server.listen(1910);

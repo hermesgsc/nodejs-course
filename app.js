@@ -1,12 +1,14 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
+const adminRoutes = "./routes/admin.js";
+const shopRoutes = "./routes/shop.js";
 
-app.use("/add-product", (req, res, next) => {
-  res.send("<h1>test product</>");
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(adminRoutes);
+app.use(shopRoutes);
+
+app.listen(1910, () => {
+  console.log("PORT: 1910");
 });
-
-app.use("/", (req, res, next) => {
-  res.send("<h1>test homepage</>");
-});
-
-app.listen(1910);
